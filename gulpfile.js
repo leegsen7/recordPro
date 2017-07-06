@@ -9,7 +9,7 @@ var plumber       = require('gulp-plumber');
 var watch         = require('gulp-watch');
 
 var src  = {
-	images: 'src/**/*.{png,jpg,jpeg,svg,gif}',
+	images: 'src/images/no-base/*.{png,jpg,jpeg,svg,gif}',
 	js: 'src/**/*.js',
 	style: 'src/**/!(common).{scss,css,sass,wxss}',
 	json: 'src/**/*.json',
