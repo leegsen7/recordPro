@@ -1,0 +1,28 @@
+<view class="container">
+	<picker
+		class="month_picker"
+		mode="date"
+		fields="month"
+		value="{{toMonth}}"
+		bindchange="bindDateChange">
+	    <view class="picker">
+	      请选择月份: {{toMonth}}
+	    </view>
+	</picker>
+	<view class="input_group" wx:for="{{inputArr}}" wx:key>
+		<view class="{{'label '+(index==focusIndex?'focus':'')}}">{{item.data ? item.text : ''}}</view>
+		<input
+			type="text"
+			type="{{inputArr.length-1==index?'text':'number'}}"
+			class="{{index==focusIndex?'focus':''}}"
+			bindinput="inputEvent"
+			bindfocus="focusEvent"
+			bindblur="blurEvent"
+			value="{{item.data}}"
+			placeholder="{{item.text}}"
+			data-index="{{index}}"
+			maxlength="7"
+		/>
+	</view>
+	<button type="primary" size="default" bindtap="confirmEvent">完 成</button>
+</view>

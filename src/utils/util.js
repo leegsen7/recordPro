@@ -1,18 +1,15 @@
-function formatNumber(n) {
-	n = n.toString();
-	return n[1] ? n : '0' + n
+function eF(e){
+	return e.currentTarget.dataset;
 }
- 
-function formatTime(date) {
-	const year = date.getFullYear();
-	const month = date.getMonth() + 1;
-	const day = date.getDate();
-	const hour = date.getHours();
-	const minute = date.getMinutes();
-	const second = date.getSeconds();
-	return [year, month, day].map( formatNumber ).join('/') + ' ' + [hour, minute, second].map( formatNumber ).join(':');
+function myToast(title,time=1000,mask=true){
+	wx.showToast({
+		title: title,
+		image: "/images/gantan.png",
+		duration: time,
+		mask: mask
+	})
 }
- 
 module.exports = {
-	formatTime: formatTime
+	eF: eF,
+	myToast: myToast
 }

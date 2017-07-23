@@ -1,37 +1,34 @@
 {
     "pages": [
-        "pages/salesOpp/salesOpp",
+        "pages/index/index",
         "pages/user/user",
-        "pages/cs/cs"
+        "pages/info/info",
+        "pages/index/edit/edit"
     ],
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "WeChat",
+        "navigationBarTitleText": "记工资Pro",
         "navigationBarTextStyle": "black"
     },
     "tabBar": {
         "list": [
             {
-                "pagePath": "pages/salesOpp/salesOpp",
-                "text": "销售机会",
-                "iconPath": "./image/wechat.png",
-                "selectedIconPath": "./image/wechatHL.png"
+                "pagePath": "pages/index/index",
+                "text": "首页"
             },
             {
-                "pagePath": "pages/cs/cs",
-                "text": "客服",
-                "iconPath": "./image/wechat.png",
-                "selectedIconPath": "./image/wechatHL.png"
+                "pagePath": "pages/info/info",
+                "text": "统计"
             },
             {
                 "pagePath": "pages/user/user",
-                "text": "我的",
-                "iconPath": "./image/wechat.png",
-                "selectedIconPath": "./image/wechatHL.png"
+                "text": "我的"
             }
         ],
-        "color": "",
-        "selectedColor": "#08BC01"
+        "color": "#dddddd",
+        "selectedColor": "#3cc51f",
+        "borderStyle": "#cecece",
+        "backgroundColor": "#ffffff"
     }
 }

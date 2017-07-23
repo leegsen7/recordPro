@@ -1,0 +1,9 @@
+<view class="container">
+	<view class="menu doubel_center">
+		<picker class="picker" bindchange="selectEvent" value="{{activeYear}}" range="{{yearArr}}">
+			年份选择：{{activeYear}}
+		</picker>
+	</view>
+    <canvas canvas-id="lineCanvas" disable-scroll="true" class="canvas" bindtouchstart="touchHandler"></canvas>
+    <view class="edit" bindtap="editEvent"></view>
+</view>

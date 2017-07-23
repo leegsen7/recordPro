@@ -7,9 +7,10 @@ var sass          = require('gulp-sass');
 var notify        = require('gulp-notify');
 var plumber       = require('gulp-plumber');
 var watch         = require('gulp-watch');
+var base          = require('gulp-base64');
 
 var src  = {
-	images: 'src/images/no-base/*.{png,jpg,jpeg,svg,gif}',
+	images: 'src/images/*.{png,jpg,jpeg,svg,gif}',
 	js: 'src/**/*.js',
 	style: 'src/**/!(common).{scss,css,sass,wxss}',
 	json: 'src/**/*.json',
@@ -35,7 +36,7 @@ gulp.task('json', function () {
 });
 gulp.task('images', function () {
 	return gulp.src(src.images)
-		.pipe(gulp.dest(dist))
+		.pipe(gulp.dest(dist+'images'))
 });
 
 gulp.task('js', function () {
@@ -45,6 +46,7 @@ gulp.task('js', function () {
 gulp.task('style',function(){
 	return gulp.src(src.style)
 	.pipe(sass().on('error', sass.logError))
+	.pipe(base())
 	.pipe(rename({
 		extname: ".wxss"
 	}))
@@ -81,11 +83,11 @@ gulp.task('default',['clean'],function(){
 });
 
 // 创建文件命令
-// gulp init --url src/pages/user
+// gulp init --url pages/user
 gulp.task('init',function(){
 	let url = gulp.env.url,
 		fileArr = ['wxml','js','json','scss'],
-		fileContent = ['','Page({})','[]',''];
+		fileContent = ['','Page({})','{}',''];
 	if (url){
 		let index = url.lastIndexOf("/");
 		let fileName = url.substr(index+1);
